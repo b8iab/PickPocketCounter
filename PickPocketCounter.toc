@@ -1,4 +1,4 @@
-## Interface: 11800
+## Interface: 11200
 ## Title: Pick Pocket Counter
 ## Notes: Cuenta el oro e items robados con Robar. Con milestones y estadisticas!
 ## Idea Original: Avis57
