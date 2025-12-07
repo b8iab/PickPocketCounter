@@ -1,10 +1,10 @@
 # PickPocketCounter
 
-Un addon para **Turtle WoW** (Vanilla 1.18) que rastrea todas las estadísticas de la habilidad **Robar** (Pick Pocket) de los Rogues.
+Un addon para **Turtle WoW** (Vanilla 1.12) que rastrea todas las estadísticas de la habilidad **Robar** (Pick Pocket) de los Rogues.
 
-![WoW Version](https://img.shields.io/badge/WoW-1.18%20Vanilla-blue)
+![WoW Version](https://img.shields.io/badge/WoW-1.12%20Vanilla-blue)
 ![Turtle WoW](https://img.shields.io/badge/Turtle%20WoW-Compatible-green)
-![Version](https://img.shields.io/badge/Version-2.0-orange)
+![Version](https://img.shields.io/badge/Version-2.1-orange)
 
 ## Características
 
@@ -13,6 +13,14 @@ Un addon para **Turtle WoW** (Vanilla 1.18) que rastrea todas las estadísticas 
 - **Intentos de robo** (sesión y total)
 - **Robos exitosos con dinero**
 - **Items robados** con conteo individual por tipo
+
+### 🖼️ Widget Visual
+- **Panel flotante** que muestra estadísticas en tiempo real
+- **Movible** - arrastra con click izquierdo para posicionar
+- **Bloqueable** - click derecho para bloquear/desbloquear posición
+- **Tooltip** - pasa el mouse para ver más detalles
+- **Click izquierdo** - muestra estadísticas completas en el chat
+- La posición y estado se guardan entre sesiones
 
 ### 🏆 Sistema de Milestones
 - **39 logros** divididos en tres categorías:
@@ -28,6 +36,7 @@ Todas las estadísticas se guardan entre sesiones:
 - Número de intentos
 - Items robados (con cantidad por tipo)
 - Milestones desbloqueados
+- Posición y estado del widget
 
 ## Instalación
 
@@ -46,9 +55,30 @@ Todas las estadísticas se guardan entre sesiones:
 | `/ppc` | Muestra estadísticas generales |
 | `/ppc items` | Lista todos los items robados con cantidad |
 | `/ppc milestones` | Muestra los milestones alcanzados |
-| `/ppc help` | Muestra la ayuda de comandos |
+| `/ppc show` | Muestra el widget |
+| `/ppc hide` | Oculta el widget |
+| `/ppc lock` | Bloquea el widget (no se puede mover) |
+| `/ppc unlock` | Desbloquea el widget |
+| `/ppc reset` | Resetea la posición del widget al centro |
 | `/ppc clear` | Limpia todas las estadísticas (requiere confirmación) |
 | `/ppc debug` | Activa/desactiva el modo debug |
+| `/ppc help` | Muestra la ayuda de comandos |
+
+## Widget
+
+El widget es un panel visual que muestra:
+- Dinero total robado
+- Número de intentos
+- Items robados
+
+**Controles del Widget:**
+- **Arrastrar (click izq)** - Mover el widget (cuando está desbloqueado)
+- **Click izquierdo** - Ver estadísticas detalladas en el chat
+- **Click derecho** - Bloquear/Desbloquear posición
+
+**Indicadores:**
+- `o` verde = Widget desbloqueado (puedes mover)
+- `x` rojo = Widget bloqueado (posición fija)
 
 ## Ejemplo de Uso
 
@@ -142,12 +172,14 @@ Progreso: 5/39
 PickPocketCounter/
 ├── PickPocketCounter.toc    # Archivo de configuración del addon
 ├── PickPocketCounter.lua    # Código principal
-└── README.md                # Este archivo
+├── README.md                # Este archivo
+└── LICENSE                  # Licencia MIT
 ```
 
 ## Compatibilidad
 
 - ✅ Turtle WoW
+- ✅ Cliente Vanilla 1.18
 - ✅ Interfaz en Español
 
 ## Notas Técnicas
@@ -156,11 +188,12 @@ PickPocketCounter/
 - El dinero se calcula comparando el oro del jugador antes y después del robo
 - Debido al timing de Turtle WoW, el dinero se detecta ~40 frames después de cerrar la ventana de loot
 - Los items se detectan mediante el evento `CHAT_MSG_LOOT`
+- El widget usa un Button frame para permitir clicks y drag
 
 ## Créditos
 
-- **Autor Original**: Avis57
-- **Actualizado para Turtle WoW**: Con ayuda de Claude (Anthropic)
+- **Idea Original**: Avis57
+- **Desarrollado para Turtle WoW**: b8iab con ayuda de Claude (Anthropic)
 
 ## Licencia
 
