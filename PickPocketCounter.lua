@@ -225,14 +225,20 @@ widget:SetScript("OnMouseDown", function()
     end
 end)
 
+
 widget:SetScript("OnMouseUp", function()
     if isDragging then
         widget:StopMovingOrSizing()
         isDragging = false
-        -- Guardar posicion
-        local _, _, _, x, y = widget:GetPoint()
-        PPC_WidgetPos.x = x
-        PPC_WidgetPos.y = y
+        
+        -- Usar GetCenter() como CritTracker
+        local centerX, centerY = widget:GetCenter()
+        local parentCenterX, parentCenterY = UIParent:GetCenter()
+        
+        if centerX and centerY and parentCenterX and parentCenterY then
+            PPC_WidgetPos.x = centerX - parentCenterX
+            PPC_WidgetPos.y = centerY - parentCenterY
+        end
     end
 end)
 
