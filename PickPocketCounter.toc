@@ -2,7 +2,7 @@
 ## Title: Pick Pocket Counter
 ## Notes: Cuenta el oro e items robados con Robar. Con milestones y estadisticas!
 ## Author: Avis57 (actualizado para Turtle WoW)
-## Version: 2.1
-## SavedVariables: PPC_Total, PPC_Count, PPC_Items, PPC_Attempts, PPC_ItemStats, PPC_Milestones, PPC_WidgetPos, PPC_WidgetLocked, PPC_WidgetVisible
+## Version: 2.2
+## SavedVariablesPerCharacter: PPC_Total, PPC_Count, PPC_Items, PPC_Attempts, PPC_ItemStats, PPC_Milestones, PPC_WidgetPos, PPC_WidgetLocked, PPC_WidgetVisible
 
 PickPocketCounter.lua
